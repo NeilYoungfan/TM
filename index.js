@@ -1,10 +1,10 @@
-const express = require("express");
-const path = require("path");
-const cors = require("cors");
+import express from "express";
+import path from "path";
+import cors from "cors";
 const app = express();
 const port = 3000;
 
-const tasksModule = require("./tasks");
+import tasksModule from "./public/tasks";
 
 app.use(cors());
 
@@ -38,14 +38,14 @@ app.get("/tasks/:id", (req, res) => {
 });
 
 // POST a new task
-app.post("/tasks", (req, res) => {
+app.post("public/tasks", (req, res) => {
   const newTask = req.body;
   const createdTask = tasksModule.createTask(newTask);
   res.status(201).json(createdTask);
 });
 
 // PUT/update a task by ID
-app.put("/tasks/:id", (req, res) => {
+app.put("public/tasks/:id", (req, res) => {
   const taskId = parseInt(req.params.id);
   const updatedTask = req.body;
 
