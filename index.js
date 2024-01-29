@@ -1,10 +1,9 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
+import tasksModule from path.join(__dirname, "tasks");
 const app = express();
 const port = 3000;
-
-import tasksModule from "./public/tasks";
 
 app.use(cors());
 
@@ -38,14 +37,14 @@ app.get("/tasks/:id", (req, res) => {
 });
 
 // POST a new task
-app.post("public/tasks", (req, res) => {
+app.post("/tasks", (req, res) => {
   const newTask = req.body;
   const createdTask = tasksModule.createTask(newTask);
   res.status(201).json(createdTask);
 });
 
 // PUT/update a task by ID
-app.put("public/tasks/:id", (req, res) => {
+app.put("/tasks/:id", (req, res) => {
   const taskId = parseInt(req.params.id);
   const updatedTask = req.body;
 
