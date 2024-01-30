@@ -1,29 +1,23 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
-import tasksModule from path.join(__dirname, "tasks");
+import * as tasksModule from "./public/tasks.mjs";
+
 const app = express();
 const port = 3000;
 
 app.use(cors());
-
-// Parse JSON API requests
 app.use(express.json());
-
-// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
 
-// File path relative to the app.js file
 app.get("/", (req, res) => {
   res.sendFile("index.html", { root: path.join(__dirname, "public") });
 });
 
-// GET all tasks
 app.get("/tasks", (req, res) => {
   const tasks = tasksModule.getAllTasks();
   res.json(tasks);
 });
-
 // GET a specific task by ID
 app.get("/tasks/:id", (req, res) => {
   const taskId = parseInt(req.params.id);
