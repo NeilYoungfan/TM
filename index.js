@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
-import * as tasksModule from "./public/tasks.mjs";
+import * as tasksModule from "./public/tasks.js";
 
 const app = express();
 const port = 3000;
