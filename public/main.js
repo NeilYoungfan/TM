@@ -1,5 +1,3 @@
-// main.js
-
 import * as apiService from "./apiService";
 import * as tasksModule from "./tasks";
 
