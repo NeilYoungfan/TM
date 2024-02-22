@@ -44,8 +44,8 @@ function handleAddTask(event) {
   apiService
     .createTask(newTask)
     .then(() => {
-      renderTasks(); // Refresh the task list after adding a new task
-      addTaskForm.reset(); // Clear the form
+      renderTasks();
+      addTaskForm.reset();
     })
     .catch((error) => console.error("Error adding task:", error));
 }
