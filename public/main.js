@@ -21,7 +21,6 @@ function renderTasks() {
       <button class="delete-btn" data-task-id="${task.id}">Delete</button>
     `;
 
-    // Add event listener for delete button
     const deleteButton = taskElement.querySelector(".delete-btn");
     deleteButton.addEventListener("click", () => handleDeleteTask(task.id));
 
@@ -29,7 +28,6 @@ function renderTasks() {
   });
 }
 
-// Function to handle the form submission and add a new task
 function handleAddTask(event) {
   event.preventDefault();
 
