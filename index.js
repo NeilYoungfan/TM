@@ -18,7 +18,7 @@ app.get("/tasks", (req, res) => {
   const tasks = tasksModule.getAllTasks();
   res.json(tasks);
 });
-// GET a specific task by ID
+
 app.get("/tasks/:id", (req, res) => {
   const taskId = parseInt(req.params.id);
   const task = tasksModule.getTaskById(taskId);
@@ -30,14 +30,12 @@ app.get("/tasks/:id", (req, res) => {
   }
 });
 
-// POST a new task
 app.post("/tasks", (req, res) => {
   const newTask = req.body;
   const createdTask = tasksModule.createTask(newTask);
   res.status(201).json(createdTask);
 });
 
-// PUT/update a task by ID
 app.put("/tasks/:id", (req, res) => {
   const taskId = parseInt(req.params.id);
   const updatedTask = req.body;
