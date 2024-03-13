@@ -4,14 +4,11 @@ import * as tasksModule from "./tasks";
 const addTaskForm = document.getElementById("addTaskForm");
 const taskList = document.getElementById("taskList");
 
-// Function to render tasks in the UI
 function renderTasks() {
   const allTasks = tasksModule.getAllTasks();
 
-  // Clear the existing task list
   taskList.innerHTML = "";
 
-  // Render each task
   allTasks.forEach((task) => {
     const taskElement = document.createElement("div");
     taskElement.className = "task";
