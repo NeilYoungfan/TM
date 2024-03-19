@@ -56,5 +56,4 @@ function handleDeleteTask(taskId) {
 // Set up event listener for form submission
 addTaskForm.addEventListener("submit", handleAddTask);
 
-// Initial rendering of tasks when the page loads
 renderTasks();
