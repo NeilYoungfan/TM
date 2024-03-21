@@ -53,7 +53,6 @@ function handleDeleteTask(taskId) {
     .catch((error) => console.error("Error deleting task:", error));
 }
 
-// Set up event listener for form submission
 addTaskForm.addEventListener("submit", handleAddTask);
 
 renderTasks();
