@@ -45,7 +45,6 @@ function handleAddTask(event) {
     .catch((error) => console.error("Error adding task:", error));
 }
 
-// Function to handle the delete button click and delete a task
 function handleDeleteTask(taskId) {
   apiService
     .deleteTask(taskId)
