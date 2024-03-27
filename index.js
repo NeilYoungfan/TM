@@ -45,7 +45,6 @@ app.put("/tasks/:id", (req, res) => {
   res.json({ message: "Task updated successfully" });
 });
 
-// DELETE a task by ID
 app.delete("/tasks/:id", (req, res) => {
   const taskId = parseInt(req.params.id);
   tasksModule.deleteTask(taskId);
@@ -53,7 +52,6 @@ app.delete("/tasks/:id", (req, res) => {
   res.json({ message: "Task deleted successfully" });
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
